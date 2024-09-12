@@ -6,6 +6,26 @@ import busio
 from digitalio import DigitalInOut
 from adafruit_pn532.i2c import PN532_I2C
 from debug_logger import DebugLogger
+from uartDataManager import setdataval
+class IdTag:
+    def __init__(self):
+        self._idTag = None
+        self.a = None
+    def setIdTag(self, idTag):
+        self._idTag = idTag
+        print(f"New RFID tag set: {self._idTag}")
+
+    def getIdTag(self):
+        return self._idTag
+    
+    def update_a(self):
+        if self._idTag == "03193E95":
+            setdataval.set_start_charge_val(0)
+        else:
+            setdataval.set_start_charge_val(1)
+            
+idtagus = IdTag()
+
 
 class PN532Reader:
     def __init__(self, logger=None):
@@ -40,8 +60,11 @@ class PN532Reader:
                     uid = self.pn532.get_passive_target()
                     if uid is not None:
                         self.idTag = uid
+                        idtagus.setIdTag(uid)
+                        idtagus.update_a()
                         self.logger.info(f"Found card with UID: {uid}", filename="pn532_reader.py", category="PN532Reader", status="CARD_FOUND")
                         self.pn532.listen_for_passive_target()
+                        
                 await asyncio.sleep(0.1)
         except Exception as e:
             self.logger.error(f"Listening Error: {e}", filename="pn532_reader.py", category="PN532Reader", status="ERROR")
@@ -55,3 +78,6 @@ class PN532Reader:
         self.pn532.listen_for_passive_target()
         self.idTag = ""
         self.logger.info("PN532 restarted and RFID reading re-enabled.", filename="pn532_reader.py", category="PN532Reader", status="RESTARTED")
+
+
+
