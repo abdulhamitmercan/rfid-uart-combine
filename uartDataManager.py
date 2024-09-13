@@ -135,4 +135,4 @@ class ReadDataResponse:
 readDataResponse = ReadDataResponse()
 setdataval = setDataval()
 setDataResponse = SetDataResponse()
-setdataval.set_start_charge_val(0)
+#setdataval.set_start_charge_val(0)
