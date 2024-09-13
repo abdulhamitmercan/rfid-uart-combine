@@ -37,4 +37,5 @@ async def main():
     except Exception as e:
         logger.error(f"Main Error: {e}", filename="main_tasks.py", category="MAIN", status="ERROR")
 
-  
+if __name__ == "__main__":
+    asyncio.run(main()) 
