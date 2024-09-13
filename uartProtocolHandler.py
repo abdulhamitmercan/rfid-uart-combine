@@ -127,8 +127,7 @@ class UartHandler:
             await asyncio.sleep(0.3)   
             print("start vharge")
         else:
-            self.sendStartCharging()
-            #self.sendStopCharging()
+            self.sendStopCharging()
             await asyncio.sleep(0.3)
             print(" vharge")
         
