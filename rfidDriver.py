@@ -21,9 +21,10 @@ class IdTag:
     def update_a(self):
         if self._idTag == "03193E95":
             setdataval.set_start_charge_val(0)
+            print("STOP")
         else:
             setdataval.set_start_charge_val(1)
-            
+            print("start")
 idtagus = IdTag()
 
 
