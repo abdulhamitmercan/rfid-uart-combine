@@ -25,6 +25,7 @@ class IdTag:
         else:
             setdataval.set_start_charge_val(1)
             print("start")
+            print(self.getIdTag())
 idtagus = IdTag()
 
 
