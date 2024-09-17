@@ -70,6 +70,7 @@ class PN532Reader:
                           a=a+1
                           print(f"a={a}")
                         idtagus.update_a()
+                        print(f"a={a}")
                         self.logger.info(f"Found card with UID: {uid}", filename="pn532_reader.py", category="PN532Reader", status="CARD_FOUND")
                         self.pn532.listen_for_passive_target()
                         
