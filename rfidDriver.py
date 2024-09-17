@@ -1,5 +1,5 @@
 # pn532_reader.py
-
+a = 0
 import asyncio
 import board
 import busio
@@ -19,6 +19,8 @@ class IdTag:
         return self._idTag
     
     def update_a(self):
+      
+            
         if self.getIdTag()== b'\x03\x19>\x95':
             setdataval.set_start_charge_val(0)
             print("STOP")
@@ -62,7 +64,9 @@ class PN532Reader:
                     uid = self.pn532.get_passive_target()
                     if uid is not None:
                         self.idTag = uid
-                        idtagus.setIdTag(uid)
+                        if(self.irq_pin): 
+                          idtagus.setIdTag(uid)
+                          a=a+1
                         idtagus.update_a()
                         self.logger.info(f"Found card with UID: {uid}", filename="pn532_reader.py", category="PN532Reader", status="CARD_FOUND")
                         self.pn532.listen_for_passive_target()
