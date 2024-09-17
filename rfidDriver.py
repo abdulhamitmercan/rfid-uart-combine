@@ -57,6 +57,7 @@ class PN532Reader:
 
     async def listen_for_cards(self):
         try:
+            self.initialize_pn532()
             self.pn532.listen_for_passive_target()
             self.logger.info("Waiting for RFID/NFC card...", filename="pn532_reader.py", category="PN532Reader", status="WAITING")
             while True:
