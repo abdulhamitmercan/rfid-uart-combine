@@ -64,7 +64,7 @@ class PN532Reader:
                     uid = self.pn532.get_passive_target()
                     if uid is not None:
                         self.idTag = uid
-                        if(self.irq_pin): 
+                    
                         idtagus.setIdTag(uid)
                         idtagus.update_a()
                         self.logger.info(f"Found card with UID: {uid}", filename="pn532_reader.py", category="PN532Reader", status="CARD_FOUND")
