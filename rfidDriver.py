@@ -42,7 +42,7 @@ class PN532Reader:
             raise
 
     def initialize_pn532(self):
-        i2c = busio.I2C(board.SCL, board.SDA)
+        i2c = busio.I2C(board.3, board.2)
         self.irq_pin = DigitalInOut(board.D4)
         return PN532_I2C(i2c, debug=False, irq=self.irq_pin)
 
