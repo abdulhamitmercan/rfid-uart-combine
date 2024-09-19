@@ -1,5 +1,5 @@
 # pn532_reader.py
-a = 0
+
 import asyncio
 import board
 import busio
@@ -57,7 +57,6 @@ class PN532Reader:
 
     async def listen_for_cards(self):
         try:
-            self.initialize_pn532()
             self.pn532.listen_for_passive_target()
             self.logger.info("Waiting for RFID/NFC card...", filename="pn532_reader.py", category="PN532Reader", status="WAITING")
             while True:
@@ -66,11 +65,8 @@ class PN532Reader:
                     if uid is not None:
                         self.idTag = uid
                         if(self.irq_pin): 
-                          idtagus.setIdTag(uid)
-                          a=a+1
-                          print(f"a={a}")
+                        idtagus.setIdTag(uid)
                         idtagus.update_a()
-                        print(f"a={a}")
                         self.logger.info(f"Found card with UID: {uid}", filename="pn532_reader.py", category="PN532Reader", status="CARD_FOUND")
                         self.pn532.listen_for_passive_target()
                         
