@@ -31,7 +31,9 @@ class IdTag:
         return self._idTag
     
     def update_a(self,irq):
+        print("asdf")
         if(irq):
+            
             print("gjgfhghj",flag)
             if flag == 1:
             
