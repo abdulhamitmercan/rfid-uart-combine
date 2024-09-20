@@ -34,9 +34,9 @@ class IdTag:
         if(irq):
             print("ai")    
             if(flag == 1):
-                
+                print("ac")
                 if self.getIdTag() == b'\x03\x19>\x95':
-                  
+                    print("a")
                     start_stop()  
                     print("a")
             flag = 0 
