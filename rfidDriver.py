@@ -7,12 +7,13 @@ from digitalio import DigitalInOut
 from adafruit_pn532.i2c import PN532_I2C
 from debug_logger import DebugLogger
 from uartDataManager import setdataval
+global caunt 
+global flagus 
 caunt = 1
-flag = 1
-isCharging = False  # A flag to track if charging is active
+flagus = 1
 
 def start_stop():
-    global caunt, isCharging  # Declare caunt and isCharging as global to modify the global variables
+    # Declare caunt and isCharging as global to modify the global variables
     if caunt == 1:
         caunt = 0
         setdataval.set_start_charge_val(1)  # Assuming setdataval is defined elsewhere
@@ -36,19 +37,19 @@ class IdTag:
         return self._idTag
     
     def update_a(self, irq, id):
-        global flag, isCharging  # Declare flag and isCharging as global
+      
         print("IRQ signal received")
         
         if irq:
             print("Signal active")
-            if flag == 1:  # Check if the system is ready for an action
+            if flagus == 1:  # Check if the system is ready for an action
                 self.setIdTag(id)  # Set the new RFID tag
                 if self.getIdTag() == b'\x03\x19>\x95':  # Check for the valid RFID tag
                     start_stop()  # Call start/stop function based on current state
-            flag = 0  # Disable further processing until reset
+            flagus = 0  # Disable further processing until reset
             
         else:
-            flag = 1  # Reset flag when the signal is inactive
+            flagus = 1  # Reset flag when the signal is inactive
             print("Signal inactive, ready for next input")
             
 idtagus = IdTag()
