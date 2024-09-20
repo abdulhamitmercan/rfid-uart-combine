@@ -7,8 +7,7 @@ from digitalio import DigitalInOut
 from adafruit_pn532.i2c import PN532_I2C
 from debug_logger import DebugLogger
 from uartDataManager import setdataval
-global caunt 
-global flagus 
+
 caunt = 1
 flagus = 1
 
@@ -17,12 +16,12 @@ def start_stop():
     if caunt == 1:
         caunt = 0
         setdataval.set_start_charge_val(1)  # Assuming setdataval is defined elsewhere
-        isCharging = True
+       
         print("start")
     else:
         caunt = 1
         setdataval.set_start_charge_val(0)
-        isCharging = False
+        
         print("STOP")
         
 class IdTag:
