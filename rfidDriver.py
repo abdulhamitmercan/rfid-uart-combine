@@ -9,22 +9,24 @@ from debug_logger import DebugLogger
 from uartDataManager import setdataval
 caunt = 1
 flag = 1
+isCharging = False  # A flag to track if charging is active
 
 def start_stop():
-    global caunt  # Declare caunt as global to modify the global variable
+    global caunt, isCharging  # Declare caunt and isCharging as global to modify the global variables
     if caunt == 1:
         caunt = 0
         setdataval.set_start_charge_val(1)  # Assuming setdataval is defined elsewhere
+        isCharging = True
         print("start")
     else:
         caunt = 1
         setdataval.set_start_charge_val(0)
+        isCharging = False
         print("STOP")
         
 class IdTag:
     def __init__(self):
         self._idTag = None
-        self.a = None
 
     def setIdTag(self, idTag):
         self._idTag = idTag
@@ -33,24 +35,22 @@ class IdTag:
     def getIdTag(self):
         return self._idTag
     
-    def update_a(self, irq,id):
-        global flag  # Declare flag as global to modify the global variable
-        print("asdf")
+    def update_a(self, irq, id):
+        global flag, isCharging  # Declare flag and isCharging as global
+        print("IRQ signal received")
+        
         if irq:
-            print("ac")
-          
-            if flag == 1:  # This will now refer to the global flag variable
-                idtagus.setIdTag(id)
-                if self.getIdTag() == b'\x03\x19>\x95':
-                   
-                    start_stop()  # Call the start_stop function
-                    
-            flag = 0 
+            print("Signal active")
+            if flag == 1:  # Check if the system is ready for an action
+                self.setIdTag(id)  # Set the new RFID tag
+                if self.getIdTag() == b'\x03\x19>\x95':  # Check for the valid RFID tag
+                    start_stop()  # Call start/stop function based on current state
+            flag = 0  # Disable further processing until reset
             
         else:
-            flag = 1
+            flag = 1  # Reset flag when the signal is inactive
+            print("Signal inactive, ready for next input")
             
-
 idtagus = IdTag()
 
 
