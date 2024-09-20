@@ -42,7 +42,7 @@ class IdTag:
             flag = 0 
             
         else:
-            flag = 0
+            flag = 1
             
 
 idtagus = IdTag()
