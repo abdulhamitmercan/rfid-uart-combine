@@ -13,6 +13,7 @@ flagus = 1
 
 def start_stop():
     # Declare caunt and isCharging as global to modify the global variables
+    global caunt
     if caunt == 1:
         caunt = 0
         setdataval.set_start_charge_val(1)  # Assuming setdataval is defined elsewhere
@@ -37,6 +38,7 @@ class IdTag:
     
     def update_a(self, irq, id):
       
+        global flagus
         print("IRQ signal received")
         
         if irq:

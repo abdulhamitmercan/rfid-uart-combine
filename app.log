@@ -1,0 +1,149 @@
+[ERROR] pn532_reader.py: Initialization Error: No I2C device at address: 0x24
+[ERROR] main_tasks.py: Main Error: No I2C device at address: 0x24
+[ERROR] pn532_reader.py: Initialization Error: No I2C device at address: 0x24
+[ERROR] main_tasks.py: Main Error: No I2C device at address: 0x24
+[ERROR] main_tasks.py: Main Error: Did not receive expected ACK from PN532!
+[INFO] pn532_reader.py: Found PN532 with firmware version: 1.6
+[INFO] pn532_reader.py: PN532 configured to communicate with MiFare cards.
+[INFO] pn532_reader.py: Waiting for RFID/NFC card...
+[INFO] i2c_device_checker.py: Starting Ping-Pong test on I2C address 0x24...
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] pn532_reader.py: Found PN532 with firmware version: 1.6
+[INFO] pn532_reader.py: PN532 configured to communicate with MiFare cards.
+[INFO] pn532_reader.py: Waiting for RFID/NFC card...
+[INFO] i2c_device_checker.py: Starting Ping-Pong test on I2C address 0x24...
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] pn532_reader.py: Found PN532 with firmware version: 1.6
+[INFO] pn532_reader.py: PN532 configured to communicate with MiFare cards.
+[INFO] pn532_reader.py: Waiting for RFID/NFC card...
+[INFO] i2c_device_checker.py: Starting Ping-Pong test on I2C address 0x24...
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[ERROR] pn532_reader.py: Listening Error: cannot access local variable 'flagus' where it is not associated with a value
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] pn532_reader.py: Found PN532 with firmware version: 1.6
+[INFO] pn532_reader.py: PN532 configured to communicate with MiFare cards.
+[INFO] pn532_reader.py: Waiting for RFID/NFC card...
+[INFO] i2c_device_checker.py: Starting Ping-Pong test on I2C address 0x24...
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[ERROR] pn532_reader.py: Listening Error: cannot access local variable 'flagus' where it is not associated with a value
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[WARNING] i2c_device_checker.py: No I2C device found at address 0x24. Starting error timer.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: Device reconnected at address 0x24. Restarting PN532...
+[INFO] pn532_reader.py: Restarting PN532...
+[INFO] pn532_reader.py: Found PN532 with firmware version: 1.6
+[INFO] pn532_reader.py: PN532 configured to communicate with MiFare cards.
+[INFO] pn532_reader.py: PN532 restarted and RFID reading re-enabled.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+                                                                
