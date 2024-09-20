@@ -9,10 +9,12 @@ from debug_logger import DebugLogger
 from uartDataManager import setdataval
 caunt = 1
 flag = 1
+
 def start_stop():
-    if (caunt == 1):
+    global caunt  # Declare caunt as global to modify the global variable
+    if caunt == 1:
         caunt = 0
-        setdataval.set_start_charge_val(1)
+        setdataval.set_start_charge_val(1)  # Assuming setdataval is defined elsewhere
         print("start")
     else:
         caunt = 1
@@ -23,6 +25,7 @@ class IdTag:
     def __init__(self):
         self._idTag = None
         self.a = None
+
     def setIdTag(self, idTag):
         self._idTag = idTag
         print(f"New RFID tag set: {self._idTag}")
@@ -30,16 +33,16 @@ class IdTag:
     def getIdTag(self):
         return self._idTag
     
-    def update_a(self,irq):
+    def update_a(self, irq):
+        global flag  # Declare flag as global to modify the global variable
         print("asdf")
-        if(irq):
+        if irq:
             print("ac")
           
-            if flag == 1:
-            
+            if flag == 1:  # This will now refer to the global flag variable
                 if self.getIdTag() == b'\x03\x19>\x95':
                     print("a")
-                    start_stop()  
+                    start_stop()  # Call the start_stop function
                     print("a")
             flag = 0 
             
