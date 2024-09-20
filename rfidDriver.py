@@ -32,7 +32,7 @@ class IdTag:
     
     def update_a(self,irq):
         print("asdf")
-        if(irq):
+        if(True):
             
             print("gjgfhghj",flag)
             if flag == 1:
