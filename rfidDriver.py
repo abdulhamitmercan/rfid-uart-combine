@@ -8,7 +8,7 @@ from adafruit_pn532.i2c import PN532_I2C
 from debug_logger import DebugLogger
 from uartDataManager import setdataval
 caunt = 1
-falg = 1
+flag = 1
 def start_stop():
     if (caunt == 1):
         caunt = 0
