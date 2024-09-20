@@ -10,7 +10,7 @@ from uartDataManager import setdataval
 caunt = 1
 
 def start_stop():
-    if (caunt):
+    if (caunt == 1):
         caunt = 0
         setdataval.set_start_charge_val(1)
         print("start")
@@ -38,7 +38,7 @@ class IdTag:
                 if self.getIdTag() == b'\x03\x19>\x95':
                   
                     start_stop()  
-                     
+                    print("a")
             flag = 0 
             
         else:
