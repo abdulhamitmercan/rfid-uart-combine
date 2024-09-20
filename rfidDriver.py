@@ -64,11 +64,11 @@ class PN532Reader:
                     uid = self.pn532.get_passive_target()
                     if uid is not None:
                         self.idTag = uid
-                    
-                        idtagus.setIdTag(uid)
-                        idtagus.update_a()
-                        self.logger.info(f"Found card with UID: {uid}", filename="pn532_reader.py", category="PN532Reader", status="CARD_FOUND")
-                        self.pn532.listen_for_passive_target()
+                        if(self.irq_pin == 0):
+                            idtagus.setIdTag(uid)
+                            idtagus.update_a()
+                            self.logger.info(f"Found card with UID: {uid}", filename="pn532_reader.py", category="PN532Reader", status="CARD_FOUND")
+                            self.pn532.listen_for_passive_target()
                         
                 await asyncio.sleep(0.1)
         except Exception as e:
