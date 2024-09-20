@@ -32,7 +32,7 @@ class IdTag:
     
     def update_a(self,irq):
         if(irq):
-            print(flag)    
+            print(flag.value)    
             if(flag == 1):
                 print("ac")
                 if self.getIdTag() == b'\x03\x19>\x95':
