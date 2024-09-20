@@ -33,17 +33,18 @@ class IdTag:
     def getIdTag(self):
         return self._idTag
     
-    def update_a(self, irq):
+    def update_a(self, irq,id):
         global flag  # Declare flag as global to modify the global variable
         print("asdf")
         if irq:
             print("ac")
           
             if flag == 1:  # This will now refer to the global flag variable
+                idtagus.setIdTag(id)
                 if self.getIdTag() == b'\x03\x19>\x95':
-                    print("a")
+                   
                     start_stop()  # Call the start_stop function
-                    print("a")
+                    
             flag = 0 
             
         else:
@@ -86,8 +87,8 @@ class PN532Reader:
                     uid = self.pn532.get_passive_target()
                     if uid is not None: 
                         self.idTag = uid
-                        idtagus.setIdTag(uid)
-                        idtagus.update_a(self.irq_pin.value)
+                        
+                        idtagus.update_a(self.irq_pin.value,uid)
                         self.logger.info(f"Found card with UID: {uid}", filename="pn532_reader.py", category="PN532Reader", status="CARD_FOUND")
                         self.pn532.listen_for_passive_target()
                     
