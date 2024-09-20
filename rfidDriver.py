@@ -7,7 +7,7 @@ from digitalio import DigitalInOut
 from adafruit_pn532.i2c import PN532_I2C
 from debug_logger import DebugLogger
 from uartDataManager import setdataval
-caunt = 0
+caunt = 1
 
 def start_stop():
     if (caunt):
