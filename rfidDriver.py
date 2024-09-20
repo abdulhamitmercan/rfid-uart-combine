@@ -7,6 +7,18 @@ from digitalio import DigitalInOut
 from adafruit_pn532.i2c import PN532_I2C
 from debug_logger import DebugLogger
 from uartDataManager import setdataval
+caunt = 0
+
+def start_stop():
+    if (caunt):
+        caunt = 0
+        setdataval.set_start_charge_val(1)
+        print("start")
+    else:
+        caunt = 1
+        setdataval.set_start_charge_val(0)
+        print("STOP")
+        
 class IdTag:
     def __init__(self):
         self._idTag = None
@@ -18,16 +30,21 @@ class IdTag:
     def getIdTag(self):
         return self._idTag
     
-    def update_a(self):
-      
+    def update_a(self,irq):
+        if(irq):
             
-        if self.getIdTag()== b'\x03\x19>\x95':
-            setdataval.set_start_charge_val(0)
-            print("STOP")
+            if(flag == 1):
+                
+                if self.getIdTag() == b'\x03\x19>\x95':
+                  
+                    start_stop()  
+                     
+            flag = 0 
+            
         else:
-            setdataval.set_start_charge_val(1)
-            print("start")
-            print(self.getIdTag())
+            flag = 0
+            
+
 idtagus = IdTag()
 
 
@@ -62,11 +79,10 @@ class PN532Reader:
             while True:
                 if self.irq_pin.value == 0:
                     uid = self.pn532.get_passive_target()
-                    if uid is not None:
+                    if uid is not None: 
                         self.idTag = uid
-                        print(f"abduleao : {self.irq_pin.value}")
                         idtagus.setIdTag(uid)
-                        idtagus.update_a()
+                        idtagus.update_a(self.irq_pin.value)
                         self.logger.info(f"Found card with UID: {uid}", filename="pn532_reader.py", category="PN532Reader", status="CARD_FOUND")
                         self.pn532.listen_for_passive_target()
                     
