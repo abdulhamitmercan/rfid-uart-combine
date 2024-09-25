@@ -7,22 +7,26 @@ from digitalio import DigitalInOut
 from adafruit_pn532.i2c import PN532_I2C
 from debug_logger import DebugLogger
 from uartDataManager import setdataval
-
 caunt = 1
-flagus = 1
+flag = 1
+isCharging = False  # A flag to track if charging is active
 
 def start_stop():
+<<<<<<< HEAD
     # Declare caunt and isCharging as global to modify the global variables
     global caunt
+=======
+    global caunt, isCharging  # Declare caunt and isCharging as global to modify the global variables
+>>>>>>> b4dbfb146f352e7ef4bd2537b1651441c839617d
     if caunt == 1:
         caunt = 0
         setdataval.set_start_charge_val(1)  # Assuming setdataval is defined elsewhere
-       
+        isCharging = True
         print("start")
     else:
         caunt = 1
         setdataval.set_start_charge_val(0)
-        
+        isCharging = False
         print("STOP")
         
 class IdTag:
@@ -37,20 +41,24 @@ class IdTag:
         return self._idTag
     
     def update_a(self, irq, id):
+<<<<<<< HEAD
       
         global flagus
+=======
+        global flag, isCharging  # Declare flag and isCharging as global
+>>>>>>> b4dbfb146f352e7ef4bd2537b1651441c839617d
         print("IRQ signal received")
         
         if irq:
             print("Signal active")
-            if flagus == 1:  # Check if the system is ready for an action
+            if flag == 1:  # Check if the system is ready for an action
                 self.setIdTag(id)  # Set the new RFID tag
                 if self.getIdTag() == b'\x03\x19>\x95':  # Check for the valid RFID tag
                     start_stop()  # Call start/stop function based on current state
-            flagus = 0  # Disable further processing until reset
+            flag = 0  # Disable further processing until reset
             
         else:
-            flagus = 1  # Reset flag when the signal is inactive
+            flag = 1  # Reset flag when the signal is inactive
             print("Signal inactive, ready for next input")
             
 idtagus = IdTag()

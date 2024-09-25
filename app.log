@@ -146,4 +146,29 @@
 [INFO] i2c_device_checker.py: I2C device found at address 0x24.
 [INFO] i2c_device_checker.py: I2C device found at address 0x24.
 [INFO] i2c_device_checker.py: I2C device found at address 0x24.
-                                                                
+                                                                [INFO] pn532_reader.py: Found PN532 with firmware version: 1.6
+[INFO] pn532_reader.py: PN532 configured to communicate with MiFare cards.
+[INFO] pn532_reader.py: Waiting for RFID/NFC card...
+[INFO] i2c_device_checker.py: Starting Ping-Pong test on I2C address 0x24...
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] i2c_device_checker.py: I2C device found at address 0x24.
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
+[INFO] pn532_reader.py: Found card with UID: bytearray(b'\x03\x19>\x95')
