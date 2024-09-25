@@ -20,7 +20,7 @@ h11==0.14.0
 idna==3.7
 jsonschema==4.23.0
 jsonschema-specifications==2023.12.1
-lgio==0.2.2.0
+lgio==0.0.0.2
 msgpack==1.0.8
 multidict==6.0.5
 ocpp==1.0.0
