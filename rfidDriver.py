@@ -1,5 +1,4 @@
 # pn532_reader.py
-
 import asyncio
 import board
 import busio
@@ -7,63 +6,27 @@ from digitalio import DigitalInOut
 from adafruit_pn532.i2c import PN532_I2C
 from debug_logger import DebugLogger
 from uartDataManager import setdataval
-caunt = 1
-flag = 1
-isCharging = False  # A flag to track if charging is active
-
-def start_stop():
-<<<<<<< HEAD
-    # Declare caunt and isCharging as global to modify the global variables
-    global caunt
-=======
-    global caunt, isCharging  # Declare caunt and isCharging as global to modify the global variables
->>>>>>> b4dbfb146f352e7ef4bd2537b1651441c839617d
-    if caunt == 1:
-        caunt = 0
-        setdataval.set_start_charge_val(1)  # Assuming setdataval is defined elsewhere
-        isCharging = True
-        print("start")
-    else:
-        caunt = 1
-        setdataval.set_start_charge_val(0)
-        isCharging = False
-        print("STOP")
-        
 class IdTag:
     def __init__(self):
         self._idTag = None
-
+        self.a = None
     def setIdTag(self, idTag):
         self._idTag = idTag
         print(f"New RFID tag set: {self._idTag}")
-
     def getIdTag(self):
         return self._idTag
     
-    def update_a(self, irq, id):
-<<<<<<< HEAD
+    def update_a(self):
       
-        global flagus
-=======
-        global flag, isCharging  # Declare flag and isCharging as global
->>>>>>> b4dbfb146f352e7ef4bd2537b1651441c839617d
-        print("IRQ signal received")
-        
-        if irq:
-            print("Signal active")
-            if flag == 1:  # Check if the system is ready for an action
-                self.setIdTag(id)  # Set the new RFID tag
-                if self.getIdTag() == b'\x03\x19>\x95':  # Check for the valid RFID tag
-                    start_stop()  # Call start/stop function based on current state
-            flag = 0  # Disable further processing until reset
             
+        if self.getIdTag()== b'\x03\x19>\x95':
+            setdataval.set_start_charge_val(0)
+            print("STOP")
         else:
-            flag = 1  # Reset flag when the signal is inactive
-            print("Signal inactive, ready for next input")
-            
+            setdataval.set_start_charge_val(1)
+            print("start")
+            print(self.getIdTag())
 idtagus = IdTag()
-
-
 class PN532Reader:
     def __init__(self, logger=None):
         self.logger = logger
@@ -73,12 +36,10 @@ class PN532Reader:
         except ValueError as e:
             self.logger.error(f"Initialization Error: {e}", filename="pn532_reader.py", category="PN532Reader", status="ERROR")
             raise
-
     def initialize_pn532(self):
         i2c = busio.I2C(board.SCL, board.SDA)
         self.irq_pin = DigitalInOut(board.D4)
         return PN532_I2C(i2c, debug=False, irq=self.irq_pin)
-
     def setup(self):
         try:
             ic, ver, rev, support = self.pn532.firmware_version
@@ -87,7 +48,6 @@ class PN532Reader:
             self.logger.info("PN532 configured to communicate with MiFare cards.", filename="pn532_reader.py", category="PN532Reader", status="INFO")
         except Exception as e:
             self.logger.error(f"Setup Error: {e}", filename="pn532_reader.py", category="PN532Reader", status="ERROR")
-
     async def listen_for_cards(self):
         try:
             self.pn532.listen_for_passive_target()
@@ -95,18 +55,18 @@ class PN532Reader:
             while True:
                 if self.irq_pin.value == 0:
                     uid = self.pn532.get_passive_target()
-                    if uid is not None: 
+                    if uid is not None:
                         self.idTag = uid
-                        
-                        idtagus.update_a(self.irq_pin.value,uid)
+
+                        idtagus.setIdTag(uid)
+                        idtagus.update_a()
                         self.logger.info(f"Found card with UID: {uid}", filename="pn532_reader.py", category="PN532Reader", status="CARD_FOUND")
                         self.pn532.listen_for_passive_target()
-                    
+                       
                 await asyncio.sleep(0.1)
         except Exception as e:
             self.logger.error(f"Listening Error: {e}", filename="pn532_reader.py", category="PN532Reader", status="ERROR")
             self.idTag = ""
-
     async def restart(self):
         """PN532'yi sıfırlayıp, tekrar başlatır ve RFID okumasını yeniden başlatır."""
         self.logger.info("Restarting PN532...", filename="pn532_reader.py", category="PN532Reader", status="RESTARTING")
@@ -115,6 +75,3 @@ class PN532Reader:
         self.pn532.listen_for_passive_target()
         self.idTag = ""
         self.logger.info("PN532 restarted and RFID reading re-enabled.", filename="pn532_reader.py", category="PN532Reader", status="RESTARTED")
-
-
-
