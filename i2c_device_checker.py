@@ -45,3 +45,4 @@ class I2CDeviceChecker:
             except Exception as e:
                 self.logger.error(f"Ping-Pong Error: {e}", filename="i2c_device_checker.py", category="I2CDeviceChecker", status="ERROR")
                 await asyncio.sleep(self.ping_interval)
+
